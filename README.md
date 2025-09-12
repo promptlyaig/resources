@@ -25,7 +25,7 @@ The goal of this repository is to:
 ---
 
 ## 📂 Repository Structure
-```
+```text
 
 resources/
 ├── articles/        # Blogs, papers, and reference articles

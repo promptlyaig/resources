@@ -68,8 +68,3 @@ This repository is shared under the **MIT License**.
 Feel free to use, share, and contribute responsibly.  
 
 ---
-
-### 🚀 Happy Learning & Building!  
-```
-
----

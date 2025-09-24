@@ -1,0 +1,181 @@
+<svg width="800" height="620" viewBox="0 0 800 620" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="620" fill="#fafafa"/>
+  
+  <!-- Title -->
+  <text x="400" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1a1a1a">ChromaDB Collection Structure & Architecture</text>
+  
+  <!-- ChromaDB Client Section -->
+  <g>
+    <rect x="20" y="50" width="760" height="80" fill="#e3f2fd" stroke="#1976d2" stroke-width="2" rx="8"/>
+    <text x="30" y="70" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0d47a1">ChromaDB Client</text>
+    
+    <!-- Client Operations -->
+    <rect x="40" y="80" width="120" height="25" fill="#bbdefb" stroke="#1976d2" stroke-width="1" rx="4"/>
+    <text x="100" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#1565c0">client.get_or_create_collection()</text>
+    
+    <rect x="170" y="80" width="120" height="25" fill="#bbdefb" stroke="#1976d2" stroke-width="1" rx="4"/>
+    <text x="230" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#1565c0">collection.add()</text>
+    
+    <rect x="300" y="80" width="120" height="25" fill="#bbdefb" stroke="#1976d2" stroke-width="1" rx="4"/>
+    <text x="360" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#1565c0">collection.query()</text>
+    
+    <rect x="430" y="80" width="120" height="25" fill="#bbdefb" stroke="#1976d2" stroke-width="1" rx="4"/>
+    <text x="490" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#1565c0">collection.delete()</text>
+    
+    <!-- Database connection -->
+    <rect x="600" y="80" width="140" height="25" fill="#90caf9" stroke="#1976d2" stroke-width="1" rx="4"/>
+    <text x="670" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#0d47a1">Persistent/In-Memory DB</text>
+  </g>
+  
+  <!-- Arrow to Collections -->
+  <path d="M 400 130 L 400 150" stroke="#333" stroke-width="3" marker-end="url(#arrowhead)"/>
+  
+  <!-- Collections Layer -->
+  <g>
+    <rect x="20" y="150" width="760" height="120" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="2" rx="8"/>
+    <text x="30" y="170" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#4a148c">Collections</text>
+    
+    <!-- Collection 1 -->
+    <rect x="50" y="180" width="200" height="70" fill="#e1bee7" stroke="#9c27b0" stroke-width="2" rx="6"/>
+    <text x="150" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#6a1b9a">Collection: "documents"</text>
+    <text x="60" y="210" font-family="Arial, sans-serif" font-size="9" fill="#6a1b9a">• Embedding Function: sentence-transformers</text>
+    <text x="60" y="222" font-family="Arial, sans-serif" font-size="9" fill="#6a1b9a">• Distance Metric: cosine</text>
+    <text x="60" y="234" font-family="Arial, sans-serif" font-size="9" fill="#6a1b9a">• Metadata: {"source", "topic", "date"}</text>
+    
+    <!-- Collection 2 -->
+    <rect x="300" y="180" width="200" height="70" fill="#c8e6c9" stroke="#388e3c" stroke-width="2" rx="6"/>
+    <text x="400" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#2e7d32">Collection: "code_docs"</text>
+    <text x="310" y="210" font-family="Arial, sans-serif" font-size="9" fill="#2e7d32">• Embedding Function: code-bert</text>
+    <text x="310" y="222" font-family="Arial, sans-serif" font-size="9" fill="#2e7d32">• Distance Metric: euclidean</text>
+    <text x="310" y="234" font-family="Arial, sans-serif" font-size="9" fill="#2e7d32">• Metadata: {"language", "function"}</text>
+    
+    <!-- Collection 3 -->
+    <rect x="550" y="180" width="200" height="70" fill="#ffcdd2" stroke="#d32f2f" stroke-width="2" rx="6"/>
+    <text x="650" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#c62828">Collection: "images"</text>
+    <text x="560" y="210" font-family="Arial, sans-serif" font-size="9" fill="#c62828">• Embedding Function: CLIP</text>
+    <text x="560" y="222" font-family="Arial, sans-serif" font-size="9" fill="#c62828">• Distance Metric: cosine</text>
+    <text x="560" y="234" font-family="Arial, sans-serif" font-size="9" fill="#c62828">• Metadata: {"resolution", "format"}</text>
+  </g>
+  
+  <!-- Arrow to Storage -->
+  <path d="M 400 270 L 400 290" stroke="#333" stroke-width="3" marker-end="url(#arrowhead)"/>
+  
+  <!-- Storage Layer -->
+  <g>
+    <rect x="20" y="290" width="760" height="140" fill="#fff3e0" stroke="#f57c00" stroke-width="2" rx="8"/>
+    <text x="30" y="310" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#e65100">Document Storage & Embedding Index</text>
+    
+    <!-- Document Storage -->
+    <rect x="40" y="320" width="220" height="100" fill="#ffffff" stroke="#ff9800" stroke-width="2" rx="6"/>
+    <text x="150" y="335" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e65100">Document Storage</text>
+    
+    <!-- Document entries -->
+    <rect x="50" y="345" width="200" height="15" fill="#ffe0b2" stroke="#ff9800" stroke-width="1" rx="2"/>
+    <text x="60" y="355" font-family="Arial, sans-serif" font-size="8" fill="#bf360c">ID: doc_001 | Text: "Machine learning basics..."</text>
+    
+    <rect x="50" y="365" width="200" height="15" fill="#ffe0b2" stroke="#ff9800" stroke-width="1" rx="2"/>
+    <text x="60" y="375" font-family="Arial, sans-serif" font-size="8" fill="#bf360c">ID: doc_002 | Text: "Deep neural networks..."</text>
+    
+    <rect x="50" y="385" width="200" height="15" fill="#ffe0b2" stroke="#ff9800" stroke-width="1" rx="2"/>
+    <text x="60" y="395" font-family="Arial, sans-serif" font-size="8" fill="#bf360c">ID: doc_003 | Text: "Natural language processing..."</text>
+    
+    <rect x="50" y="405" width="200" height="10" fill="#ffcc02" stroke="#ff9800" stroke-width="1" rx="2"/>
+    <text x="150" y="412" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#bf360c">Raw Text Documents</text>
+    
+    <!-- Embedding Index -->
+    <rect x="280" y="320" width="220" height="100" fill="#ffffff" stroke="#ff9800" stroke-width="2" rx="6"/>
+    <text x="390" y="335" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e65100">Embedding Index</text>
+    
+    <!-- Vector entries -->
+    <rect x="290" y="345" width="200" height="15" fill="#ffe0b2" stroke="#ff9800" stroke-width="1" rx="2"/>
+    <text x="300" y="355" font-family="Arial, sans-serif" font-size="8" fill="#bf360c">doc_001: [0.23, -0.45, 0.67, 0.12, ...]</text>
+    
+    <rect x="290" y="365" width="200" height="15" fill="#ffe0b2" stroke="#ff9800" stroke-width="1" rx="2"/>
+    <text x="300" y="375" font-family="Arial, sans-serif" font-size="8" fill="#bf360c">doc_002: [-0.18, 0.72, -0.34, 0.89, ...]</text>
+    
+    <rect x="290" y="385" width="200" height="15" fill="#ffe0b2" stroke="#ff9800" stroke-width="1" rx="2"/>
+    <text x="300" y="395" font-family="Arial, sans-serif" font-size="8" fill="#bf360c">doc_003: [0.56, 0.21, -0.78, -0.43, ...]</text>
+    
+    <rect x="290" y="405" width="200" height="10" fill="#ffcc02" stroke="#ff9800" stroke-width="1" rx="2"/>
+    <text x="390" y="412" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#bf360c">High-Dimensional Vectors</text>
+    
+    <!-- Metadata Storage -->
+    <rect x="520" y="320" width="220" height="100" fill="#ffffff" stroke="#ff9800" stroke-width="2" rx="6"/>
+    <text x="630" y="335" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e65100">Metadata Storage</text>
+    
+    <!-- Metadata entries -->
+    <rect x="530" y="345" width="200" height="15" fill="#ffe0b2" stroke="#ff9800" stroke-width="1" rx="2"/>
+    <text x="540" y="355" font-family="Arial, sans-serif" font-size="8" fill="#bf360c">doc_001: {"source": "wiki", "topic": "ML"}</text>
+    
+    <rect x="530" y="365" width="200" height="15" fill="#ffe0b2" stroke="#ff9800" stroke-width="1" rx="2"/>
+    <text x="540" y="375" font-family="Arial, sans-serif" font-size="8" fill="#bf360c">doc_002: {"source": "paper", "topic": "DL"}</text>
+    
+    <rect x="530" y="385" width="200" height="15" fill="#ffe0b2" stroke="#ff9800" stroke-width="1" rx="2"/>
+    <text x="540" y="395" font-family="Arial, sans-serif" font-size="8" fill="#bf360c">doc_003: {"source": "blog", "topic": "NLP"}</text>
+    
+    <rect x="530" y="405" width="200" height="10" fill="#ffcc02" stroke="#ff9800" stroke-width="1" rx="2"/>
+    <text x="630" y="412" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#bf360c">Structured Metadata</text>
+  </g>
+  
+  <!-- Arrow to Query Processing -->
+  <path d="M 400 430 L 400 450" stroke="#333" stroke-width="3" marker-end="url(#arrowhead)"/>
+  
+  <!-- Similarity Search Architecture -->
+  <g>
+    <rect x="20" y="450" width="760" height="130" fill="#e8f5e8" stroke="#388e3c" stroke-width="2" rx="8"/>
+    <text x="30" y="470" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1b5e20">Similarity Search Architecture</text>
+    
+    <!-- Query Input -->
+    <rect x="40" y="480" width="140" height="40" fill="#c8e6c9" stroke="#4caf50" stroke-width="2" rx="6"/>
+    <text x="110" y="495" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#2e7d32">Query Input</text>
+    <text x="50" y="510" font-family="Arial, sans-serif" font-size="9" fill="#2e7d32">"What is deep learning?"</text>
+    
+    <!-- Arrow -->
+    <path d="M 190 500 L 220 500" stroke="#4caf50" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Embedding Generation -->
+    <rect x="230" y="480" width="140" height="40" fill="#a5d6a7" stroke="#4caf50" stroke-width="2" rx="6"/>
+    <text x="300" y="495" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#1b5e20">Embedding</text>
+    <text x="240" y="510" font-family="Arial, sans-serif" font-size="8" fill="#1b5e20">Query → Vector</text>
+    <text x="240" y="520" font-family="Arial, sans-serif" font-size="8" fill="#1b5e20">[0.12, 0.78, -0.34, ...]</text>
+    
+    <!-- Arrow -->
+    <path d="M 380 500 L 410 500" stroke="#4caf50" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Vector Search -->
+    <rect x="420" y="480" width="140" height="40" fill="#81c784" stroke="#4caf50" stroke-width="2" rx="6"/>
+    <text x="490" y="495" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#1b5e20">Vector Search</text>
+    <text x="430" y="510" font-family="Arial, sans-serif" font-size="8" fill="#1b5e20">Cosine Similarity</text>
+    <text x="430" y="520" font-family="Arial, sans-serif" font-size="8" fill="#1b5e20">Top-K Results</text>
+    
+    <!-- Arrow -->
+    <path d="M 570 500 L 600 500" stroke="#4caf50" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Results -->
+    <rect x="610" y="480" width="140" height="40" fill="#66bb6a" stroke="#4caf50" stroke-width="2" rx="6"/>
+    <text x="680" y="495" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#1b5e20">Results</text>
+    <text x="620" y="510" font-family="Arial, sans-serif" font-size="8" fill="#1b5e20">Ranked Documents</text>
+    <text x="620" y="520" font-family="Arial, sans-serif" font-size="8" fill="#1b5e20">+ Metadata + Distances</text>
+    
+    <!-- Search Process Details -->
+    <rect x="40" y="530" width="710" height="40" fill="#f1f8e9" stroke="#689f38" stroke-width="1" rx="4"/>
+    <text x="50" y="545" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#33691e">Search Process:</text>
+    <text x="50" y="558" font-family="Arial, sans-serif" font-size="9" fill="#33691e">1. Embed query using collection's embedding function</text>
+    <text x="350" y="558" font-family="Arial, sans-serif" font-size="9" fill="#33691e">2. Calculate distances & apply filters</text>
+    <text x="580" y="558" font-family="Arial, sans-serif" font-size="9" fill="#33691e">3. Return top-n results</text>
+  </g>
+  
+  <!-- ChromaDB Features -->
+  <g>
+    <text x="40" y="590" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#1565c0">Key Features:</text>
+    <text x="40" y="603" font-family="Arial, sans-serif" font-size="9" fill="#1565c0">• Multi-modal embeddings • Metadata filtering • Persistent storage</text>
+  </g>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+  </defs>
+</svg>

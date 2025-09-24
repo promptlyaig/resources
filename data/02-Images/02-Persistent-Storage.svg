@@ -1,0 +1,215 @@
+<svg width="700" height="500" viewBox="0 0 700 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="700" height="500" fill="#fafafa"/>
+  
+  <!-- Title -->
+  <text x="350" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#2c3e50">ChromaDB Persistent Storage Architecture</text>
+  
+  <!-- Left Side - Data Input Layer -->
+  <g>
+    <rect x="10" y="50" width="160" height="380" fill="#e3f2fd" stroke="#2196f3" stroke-width="2" rx="8"/>
+    <text x="90" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1565c0">Application Layer</text>
+    
+    <!-- Document Icons -->
+    <rect x="30" y="90" width="25" height="30" fill="#fff" stroke="#666" stroke-width="1" rx="2"/>
+    <text x="42" y="107" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">PDF</text>
+    
+    <rect x="60" y="90" width="25" height="30" fill="#fff" stroke="#666" stroke-width="1" rx="2"/>
+    <text x="72" y="107" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">TXT</text>
+    
+    <rect x="90" y="90" width="25" height="30" fill="#fff" stroke="#666" stroke-width="1" rx="2"/>
+    <text x="102" y="107" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">DOC</text>
+    
+    <rect x="120" y="90" width="25" height="30" fill="#fff" stroke="#666" stroke-width="1" rx="2"/>
+    <text x="132" y="107" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">JSON</text>
+    
+    <!-- Code Snippet -->
+    <rect x="20" y="140" width="140" height="80" fill="#263238" stroke="#37474f" stroke-width="1" rx="4"/>
+    <text x="25" y="155" font-family="Courier, monospace" font-size="9" fill="#4caf50"># PersistentClient</text>
+    <text x="25" y="170" font-family="Courier, monospace" font-size="8" fill="#81c784">client = chromadb.</text>
+    <text x="25" y="182" font-family="Courier, monospace" font-size="8" fill="#81c784">PersistentClient(</text>
+    <text x="25" y="194" font-family="Courier, monospace" font-size="8" fill="#ffb74d">  path="./vectordb"</text>
+    <text x="25" y="206" font-family="Courier, monospace" font-size="8" fill="#81c784">)</text>
+    
+    <!-- Application Operations -->
+    <rect x="20" y="240" width="140" height="100" fill="#ffffff" stroke="#2196f3" stroke-width="1" rx="4"/>
+    <text x="90" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#1565c0">Operations</text>
+    
+    <rect x="30" y="265" width="120" height="15" fill="#bbdefb" stroke="#2196f3" stroke-width="1" rx="2"/>
+    <text x="90" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#0d47a1">collection.add()</text>
+    
+    <rect x="30" y="285" width="120" height="15" fill="#bbdefb" stroke="#2196f3" stroke-width="1" rx="2"/>
+    <text x="90" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#0d47a1">collection.query()</text>
+    
+    <rect x="30" y="305" width="120" height="15" fill="#bbdefb" stroke="#2196f3" stroke-width="1" rx="2"/>
+    <text x="90" y="315" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#0d47a1">collection.update()</text>
+    
+    <!-- Comparison Box -->
+    <rect x="20" y="360" width="140" height="60" fill="#f3e5f5" stroke="#9c27b0" stroke-width="1" rx="4"/>
+    <text x="90" y="375" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#7b1fa2">PersistentClient vs</text>
+    <text x="90" y="388" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#7b1fa2">In-Memory Client</text>
+    <text x="30" y="402" font-family="Arial, sans-serif" font-size="8" fill="#6a1b9a">✓ Data survives restarts</text>
+    <text x="30" y="412" font-family="Arial, sans-serif" font-size="8" fill="#6a1b9a">✓ Disk-based storage</text>
+  </g>
+  
+  <!-- Arrows from Application to Storage -->
+  <path d="M 170 200 L 220 200" stroke="#2196f3" stroke-width="3" fill="none"/>
+  <polygon points="220,195 230,200 220,205" fill="#2196f3"/>
+  <text x="195" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#1565c0">Write Ops</text>
+  
+  <!-- Center - Storage Architecture -->
+  <g>
+    <!-- Persistence Guarantee Border -->
+    <rect x="225" y="40" width="250" height="390" fill="none" stroke="#4caf50" stroke-width="3" stroke-dasharray="10,5" rx="12"/>
+    <text x="350" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2e7d32">Data Survives Restarts</text>
+    
+    <!-- Storage Cylinder -->
+    <ellipse cx="350" cy="120" rx="80" ry="20" fill="#c8e6c9" stroke="#4caf50" stroke-width="2"/>
+    <rect x="270" y="120" width="160" height="220" fill="#c8e6c9" stroke="none"/>
+    <ellipse cx="350" cy="340" rx="80" ry="20" fill="#a5d6a7" stroke="#4caf50" stroke-width="2"/>
+    
+    <!-- Collections Layer -->
+    <ellipse cx="350" cy="120" rx="80" ry="20" fill="#81c784" stroke="#4caf50" stroke-width="2"/>
+    <text x="350" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1b5e20">Collections</text>
+    
+    <!-- Collection sections within -->
+    <rect x="280" y="135" width="30" height="15" fill="#ffb74d" rx="2"/>
+    <text x="295" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#e65100">docs</text>
+    
+    <rect x="320" y="135" width="30" height="15" fill="#64b5f6" rx="2"/>
+    <text x="335" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#0d47a1">images</text>
+    
+    <rect x="360" y="135" width="30" height="15" fill="#f48fb1" rx="2"/>
+    <text x="375" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#880e4f">code</text>
+    
+    <rect x="400" y="135" width="30" height="15" fill="#a5d6a7" rx="2"/>
+    <text x="415" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#2e7d32">chat</text>
+    
+    <!-- Documents + Metadata Layer -->
+    <rect x="280" y="170" width="140" height="70" fill="#ffffff" stroke="#4caf50" stroke-width="1" rx="4"/>
+    <text x="350" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2e7d32">Documents + Metadata</text>
+    
+    <!-- SQLite Icon -->
+    <rect x="290" y="195" width="30" height="20" fill="#003d82" rx="2"/>
+    <text x="305" y="207" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">SQLite</text>
+    
+    <!-- Folder Icons -->
+    <rect x="330" y="195" width="15" height="12" fill="#ffc107" stroke="#ff8f00" stroke-width="1" rx="1"/>
+    <rect x="350" y="195" width="15" height="12" fill="#ffc107" stroke="#ff8f00" stroke-width="1" rx="1"/>
+    <rect x="370" y="195" width="15" height="12" fill="#ffc107" stroke="#ff8f00" stroke-width="1" rx="1"/>
+    
+    <!-- JSON Structure -->
+    <text x="290" y="220" font-family="Arial, sans-serif" font-size="8" fill="#2e7d32">{"id": "doc1", "text": "...",</text>
+    <text x="290" y="230" font-family="Arial, sans-serif" font-size="8" fill="#2e7d32"> "metadata": {"topic": "AI"}}</text>
+    
+    <!-- Vector Embeddings Layer -->
+    <rect x="280" y="260" width="140" height="70" fill="#e8f5e8" stroke="#4caf50" stroke-width="1" rx="4"/>
+    <text x="350" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1b5e20">Vector Embeddings</text>
+    
+    <!-- Index Files -->
+    <rect x="290" y="285" width="40" height="15" fill="#81c784" rx="2"/>
+    <text x="310" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#1b5e20">HNSW Index</text>
+    
+    <rect x="340" y="285" width="40" height="15" fill="#81c784" rx="2"/>
+    <text x="360" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#1b5e20">Vector Data</text>
+    
+    <!-- Vector representation -->
+    <text x="290" y="310" font-family="Arial, sans-serif" font-size="8" fill="#1b5e20">[0.23, -0.45, 0.67, 0.12, ...]</text>
+    <text x="290" y="320" font-family="Arial, sans-serif" font-size="8" fill="#1b5e20">Binary format • Compressed</text>
+    
+    <!-- File System Path -->
+    <rect x="240" y="360" width="220" height="25" fill="#f5f5f5" stroke="#666" stroke-width="1" rx="4"/>
+    <text x="350" y="375" text-anchor="middle" font-family="Courier, monospace" font-size="10" fill="#333">/vectordb/collection_name/</text>
+    
+    <!-- ACID Properties -->
+    <rect x="240" y="395" width="50" height="20" fill="#2196f3" rx="3"/>
+    <text x="265" y="407" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">ACID</text>
+    
+    <rect x="300" y="395" width="50" height="20" fill="#4caf50" rx="3"/>
+    <text x="325" y="407" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">Isolation</text>
+    
+    <rect x="360" y="395" width="50" height="20" fill="#ff9800" rx="3"/>
+    <text x="385" y="407" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">Durable</text>
+  </g>
+  
+  <!-- Right Side - Retrieval Layer -->
+  <g>
+    <rect x="530" y="50" width="160" height="380" fill="#fff3e0" stroke="#ff9800" stroke-width="2" rx="8"/>
+    <text x="610" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#e65100">Retrieval Layer</text>
+    
+    <!-- Query Interface -->
+    <rect x="550" y="90" width="120" height="40" fill="#ffffff" stroke="#ff9800" stroke-width="1" rx="4"/>
+    <text x="610" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e65100">Query Interface</text>
+    <text x="560" y="120" font-family="Arial, sans-serif" font-size="8" fill="#d84315">search: "machine learning"</text>
+    
+    <!-- Direct ID Lookup -->
+    <rect x="550" y="150" width="120" height="30" fill="#4caf50" stroke="#2e7d32" stroke-width="1" rx="4"/>
+    <text x="610" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white">Direct ID Lookup</text>
+    <text x="610" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">< 1ms • O(1)</text>
+    
+    <!-- Similarity Search -->
+    <rect x="550" y="190" width="120" height="40" fill="#2196f3" stroke="#1565c0" stroke-width="1" rx="4"/>
+    <text x="610" y="205" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white">Similarity Search</text>
+    
+    <!-- Vector dots for similarity -->
+    <circle cx="565" cy="220" r="3" fill="#64b5f6"/>
+    <circle cx="580" cy="215" r="3" fill="#42a5f5"/>
+    <circle cx="595" cy="225" r="3" fill="#2196f3"/>
+    <circle cx="610" cy="220" r="4" fill="#fff" stroke="#1565c0" stroke-width="2"/>
+    <circle cx="625" cy="218" r="3" fill="#42a5f5"/>
+    <circle cx="640" cy="223" r="3" fill="#64b5f6"/>
+    <circle cx="655" cy="220" r="3" fill="#90caf9"/>
+    
+    <!-- Metadata Filtering -->
+    <g>
+      <rect x="550" y="245" width="120" height="50" fill="#9c27b0" stroke="#6a1b9a" stroke-width="1" rx="4"/>
+      <text x="610" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white">Metadata Filtering</text>
+      
+      <!-- Funnel shape -->
+      <polygon points="560,270 660,270 650,285 570,285" fill="#e1bee7" stroke="#9c27b0" stroke-width="1"/>
+      <polygon points="570,285 650,285 630,290 590,290" fill="#ce93d8" stroke="#9c27b0" stroke-width="1"/>
+      
+      <text x="610" y="279" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#4a148c">1M → 100K → 10</text>
+    </g>
+    
+    <!-- Results -->
+    <rect x="550" y="310" width="120" height="60" fill="#ffffff" stroke="#ff9800" stroke-width="2" rx="4"/>
+    <text x="610" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e65100">Results</text>
+    <text x="560" y="340" font-family="Arial, sans-serif" font-size="8" fill="#d84315">• Document content</text>
+    <text x="560" y="350" font-family="Arial, sans-serif" font-size="8" fill="#d84315">• Metadata</text>
+    <text x="560" y="360" font-family="Arial, sans-serif" font-size="8" fill="#d84315">• Similarity scores</text>
+    
+    <!-- Performance Metrics -->
+    <rect x="550" y="385" width="120" height="40" fill="#4caf50" stroke="#2e7d32" stroke-width="1" rx="4"/>
+    <text x="610" y="400" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white">Performance</text>
+    <text x="610" y="412" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">< 100ms query time</text>
+    <text x="610" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">Millions of vectors</text>
+  </g>
+  
+  <!-- Arrows from Storage to Retrieval -->
+  <path d="M 480 180 L 520 180" stroke="#ff9800" stroke-width="3" fill="none"/>
+  <polygon points="520,175 530,180 520,185" fill="#ff9800"/>
+  <text x="500" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e65100">Read Ops</text>
+  
+  <!-- Different retrieval paths -->
+  <!-- Direct lookup path -->
+  <path d="M 480 165 Q 505 140 530 165" stroke="#4caf50" stroke-width="2" fill="none"/>
+  <polygon points="525,163 530,165 527,170" fill="#4caf50"/>
+  
+  <!-- Similarity search path -->
+  <path d="M 480 200 Q 505 230 530 205" stroke="#2196f3" stroke-width="2" fill="none"/>
+  <polygon points="525,203 530,205 527,210" fill="#2196f3"/>
+  
+  <!-- Metadata filtering path -->
+  <path d="M 480 230 Q 505 260 530 270" stroke="#9c27b0" stroke-width="2" fill="none"/>
+  <polygon points="525,268 530,270 527,275" fill="#9c27b0"/>
+  
+  <!-- Background Processes -->
+  <path d="M 350 430 Q 400 450 450 430" stroke="#607d8b" stroke-width="2" stroke-dasharray="5,5" fill="none"/>
+  <text x="400" y="465" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#455a64">Background Indexing</text>
+  
+  <!-- Backup/Recovery -->
+  <path d="M 300 430 Q 250 450 300 470" stroke="#4caf50" stroke-width="2" stroke-dasharray="3,3" fill="none"/>
+  <path d="M 400 430 Q 450 450 400 470" stroke="#4caf50" stroke-width="2" stroke-dasharray="3,3" fill="none"/>
+  <text x="350" y="485" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#2e7d32">Backup & Recovery • 99.9% Availability</text>
+</svg>

@@ -1,0 +1,243 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f5f5f5"/>
+  
+  <!-- Title -->
+  <text x="400" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#2c3e50">ChromaDB Advanced Operations Dashboard</text>
+  
+  <!-- Collection Management Section -->
+  <g>
+    <rect x="20" y="45" width="760" height="150" fill="#e8eaf6" stroke="#673ab7" stroke-width="2" rx="8"/>
+    <text x="30" y="65" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#3f51b5">Collection Management</text>
+    
+    <!-- Collection 1 - Active -->
+    <g>
+      <ellipse cx="120" cy="110" rx="35" ry="20" fill="#4caf50" stroke="#2e7d32" stroke-width="2"/>
+      <ellipse cx="120" cy="105" rx="35" ry="15" fill="#66bb6a" stroke="#2e7d32" stroke-width="2"/>
+      <ellipse cx="120" cy="100" rx="35" ry="10" fill="#81c784" stroke="#2e7d32" stroke-width="2"/>
+      <text x="120" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#1b5e20">documents</text>
+      <circle cx="155" cy="85" r="6" fill="#4caf50"/>
+      <text x="155" y="89" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">✓</text>
+      <text x="120" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#2e7d32">Active (1.2M docs)</text>
+    </g>
+    
+    <!-- Collection 2 - Creating -->
+    <g>
+      <ellipse cx="280" cy="110" rx="35" ry="20" fill="#2196f3" stroke="#1565c0" stroke-width="2"/>
+      <ellipse cx="280" cy="105" rx="35" ry="15" fill="#42a5f5" stroke="#1565c0" stroke-width="2"/>
+      <ellipse cx="280" cy="100" rx="35" ry="10" fill="#64b5f6" stroke="#1565c0" stroke-width="2"/>
+      <text x="280" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#0d47a1">images_db</text>
+      <circle cx="315" cy="85" r="6" fill="#2196f3"/>
+      <text x="315" y="89" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">↻</text>
+      <text x="280" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#1565c0">Creating (45% done)</text>
+    </g>
+    
+    <!-- Collection 3 - Error State -->
+    <g>
+      <ellipse cx="440" cy="110" rx="35" ry="20" fill="#f44336" stroke="#c62828" stroke-width="2"/>
+      <ellipse cx="440" cy="105" rx="35" ry="15" fill="#ef5350" stroke="#c62828" stroke-width="2"/>
+      <ellipse cx="440" cy="100" rx="35" ry="10" fill="#e57373" stroke="#c62828" stroke-width="2"/>
+      <text x="440" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#b71c1c">code_repo</text>
+      <polygon points="475,79 481,91 469,91" fill="#f44336"/>
+      <text x="475" y="89" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">!</text>
+      <text x="440" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#c62828">Error (Retry needed)</text>
+    </g>
+    
+    <!-- Operations Panel -->
+    <rect x="520" y="70" width="240" height="110" fill="#ffffff" stroke="#673ab7" stroke-width="1" rx="6"/>
+    <text x="640" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#673ab7">CRUD Operations</text>
+    
+    <rect x="530" y="95" width="70" height="20" fill="#9c27b0" rx="3"/>
+    <text x="565" y="107" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">CREATE</text>
+    
+    <rect x="610" y="95" width="70" height="20" fill="#2196f3" rx="3"/>
+    <text x="645" y="107" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">READ</text>
+    
+    <rect x="690" y="95" width="60" height="20" fill="#ff9800" rx="3"/>
+    <text x="720" y="107" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">UPDATE</text>
+    
+    <rect x="530" y="125" width="70" height="20" fill="#f44336" rx="3"/>
+    <text x="565" y="137" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">DELETE</text>
+    
+    <rect x="610" y="125" width="70" height="20" fill="#4caf50" rx="3"/>
+    <text x="645" y="137" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">UPSERT</text>
+    
+    <rect x="690" y="125" width="60" height="20" fill="#607d8b" rx="3"/>
+    <text x="720" y="137" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">PEEK</text>
+    
+    <rect x="530" y="155" width="220" height="20" fill="#e1f5fe" stroke="#0288d1" stroke-width="1" rx="3"/>
+    <text x="640" y="167" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#01579b">Error Handling & Auto-Retry Logic</text>
+  </g>
+  
+  <!-- Batch Processing Section -->
+  <g>
+    <rect x="20" y="210" width="760" height="150" fill="#e0f2f1" stroke="#009688" stroke-width="2" rx="8"/>
+    <text x="30" y="230" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#00695c">Batch Processing Pipeline</text>
+    
+    <!-- Input Documents -->
+    <g>
+      <text x="50" y="250" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#00695c">Input Documents</text>
+      
+      <rect x="40" y="255" width="20" height="25" fill="#fff" stroke="#666" stroke-width="1" rx="2"/>
+      <text x="50" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">PDF</text>
+      
+      <rect x="65" y="255" width="20" height="25" fill="#fff" stroke="#666" stroke-width="1" rx="2"/>
+      <text x="75" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">DOC</text>
+      
+      <rect x="90" y="255" width="20" height="25" fill="#fff" stroke="#666" stroke-width="1" rx="2"/>
+      <text x="100" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">TXT</text>
+      
+      <text x="70" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#00695c">10K+ Files</text>
+    </g>
+    
+    <!-- Batch Processor -->
+    <rect x="150" y="250" width="120" height="60" fill="#4db6ac" stroke="#00695c" stroke-width="2" rx="6"/>
+    <text x="210" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#004d40">Batch Processor</text>
+    <text x="210" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#004d40">Parallel Processing</text>
+    <text x="210" y="298" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#004d40">Chunk Size: 100</text>
+    
+    <!-- Processing Arrows -->
+    <path d="M 120 267 L 140 267" stroke="#009688" stroke-width="3" fill="none"/>
+    <polygon points="140,262 150,267 140,272" fill="#009688"/>
+    
+    <path d="M 120 277 L 140 277" stroke="#009688" stroke-width="3" fill="none"/>
+    <polygon points="140,272 150,277 140,282" fill="#009688"/>
+    
+    <path d="M 120 287 L 140 287" stroke="#009688" stroke-width="3" fill="none"/>
+    <polygon points="140,282 150,287 140,292" fill="#009688"/>
+    
+    <!-- Performance Metrics -->
+    <rect x="300" y="245" width="140" height="70" fill="#ffffff" stroke="#009688" stroke-width="1" rx="6"/>
+    <text x="370" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#00695c">Performance Metrics</text>
+    
+    <text x="310" y="275" font-family="Arial, sans-serif" font-size="9" fill="#00695c">• Throughput: 1,500 docs/sec</text>
+    <text x="310" y="288" font-family="Arial, sans-serif" font-size="9" fill="#00695c">• Memory Usage: 2.5GB</text>
+    <text x="310" y="301" font-family="Arial, sans-serif" font-size="9" fill="#00695c">• Processing Time: 6.7s</text>
+    
+    <!-- Memory Optimization -->
+    <rect x="470" y="245" width="140" height="70" fill="#b2dfdb" stroke="#009688" stroke-width="2" rx="6"/>
+    <text x="540" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#004d40">Memory Optimization</text>
+    
+    <rect x="480" y="268" width="120" height="8" fill="#e0f2f1" stroke="#00695c" stroke-width="1" rx="4"/>
+    <rect x="480" y="268" width="84" height="8" fill="#4caf50" rx="4"/>
+    <text x="540" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#004d40">RAM Usage: 70%</text>
+    
+    <text x="480" y="300" font-family="Arial, sans-serif" font-size="8" fill="#004d40">• Streaming mode enabled</text>
+    <text x="480" y="310" font-family="Arial, sans-serif" font-size="8" fill="#004d40">• Garbage collection optimized</text>
+    
+    <!-- Output -->
+    <rect x="640" y="250" width="120" height="60" fill="#26a69a" stroke="#00695c" stroke-width="2" rx="6"/>
+    <text x="700" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff">Vector Storage</text>
+    <text x="700" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#ffffff">Indexed: 9.8K docs</text>
+    <text x="700" y="298" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#ffffff">Status: Processing...</text>
+    
+    <!-- Arrow to output -->
+    <path d="M 610 280 L 630 280" stroke="#009688" stroke-width="3" fill="none"/>
+    <polygon points="630,275 640,280 630,285" fill="#009688"/>
+    
+    <!-- Batch Configuration -->
+    <rect x="30" y="320" width="730" height="30" fill="#f1f8e9" stroke="#689f38" stroke-width="1" rx="4"/>
+    <text x="40" y="335" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#33691e">Batch Configuration:</text>
+    <text x="40" y="345" font-family="Arial, sans-serif" font-size="9" fill="#33691e">batch_size=100 | max_workers=8 | timeout=300s | retry_attempts=3 | memory_limit=4GB | checkpoint_interval=1000</text>
+  </g>
+  
+  <!-- Query Optimization Section -->
+  <g>
+    <rect x="20" y="375" width="760" height="200" fill="#fff3e0" stroke="#ff5722" stroke-width="2" rx="8"/>
+    <text x="30" y="395" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#d84315">Query Optimization Strategies</text>
+    
+    <!-- Search Interface -->
+    <rect x="40" y="405" width="180" height="80" fill="#ffffff" stroke="#ff5722" stroke-width="1" rx="6"/>
+    <text x="130" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#ff5722">Search Interface</text>
+    
+    <rect x="50" y="430" width="160" height="15" fill="#fbe9e7" stroke="#ff5722" stroke-width="1" rx="3"/>
+    <text x="55" y="440" font-family="Arial, sans-serif" font-size="8" fill="#d84315">query: "machine learning basics"</text>
+    
+    <rect x="50" y="450" width="160" height="15" fill="#fbe9e7" stroke="#ff5722" stroke-width="1" rx="3"/>
+    <text x="55" y="460" font-family="Arial, sans-serif" font-size="8" fill="#d84315">n_results: 10</text>
+    
+    <rect x="50" y="470" width="160" height="10" fill="#ff5722" stroke="#ff5722" stroke-width="1" rx="2"/>
+    <text x="130" y="477" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="white">SEARCH</text>
+    
+    <!-- Metadata Filtering -->
+    <g>
+      <rect x="240" y="405" width="140" height="80" fill="#ffffff" stroke="#ff5722" stroke-width="1" rx="6"/>
+      <text x="310" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#ff5722">Metadata Filtering</text>
+      
+      <!-- Funnel shape -->
+      <polygon points="250,430 370,430 360,450 260,450" fill="#ffccbc" stroke="#ff5722" stroke-width="1"/>
+      <polygon points="260,450 360,450 350,470 270,470" fill="#ffab91" stroke="#ff5722" stroke-width="1"/>
+      <polygon points="270,470 350,470 320,480 300,480" fill="#ff8a65" stroke="#ff5722" stroke-width="1"/>
+      
+      <text x="310" y="442" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#d84315">All Docs (1M)</text>
+      <text x="310" y="462" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#d84315">Topic Filter (50K)</text>
+      <text x="310" y="477" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#d84315">Results (10)</text>
+    </g>
+    
+    <!-- Vector Similarity -->
+    <g>
+      <rect x="400" y="405" width="140" height="80" fill="#ffffff" stroke="#ff5722" stroke-width="1" rx="6"/>
+      <text x="470" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#ff5722">Vector Similarity</text>
+      
+      <!-- Query vector (center) -->
+      <circle cx="470" cy="445" r="8" fill="#ff5722"/>
+      <text x="470" y="449" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="white">Q</text>
+      
+      <!-- Similar vectors (close) -->
+      <circle cx="455" cy="435" r="4" fill="#4caf50"/>
+      <circle cx="485" cy="440" r="4" fill="#4caf50"/>
+      <circle cx="460" cy="460" r="4" fill="#4caf50"/>
+      
+      <!-- Dissimilar vectors (far) -->
+      <circle cx="420" cy="430" r="3" fill="#f44336"/>
+      <circle cx="520" cy="465" r="3" fill="#f44336"/>
+      <circle cx="425" cy="470" r="3" fill="#f44336"/>
+      
+      <!-- Similarity lines -->
+      <line x1="470" y1="445" x2="455" y2="435" stroke="#4caf50" stroke-width="2"/>
+      <line x1="470" y1="445" x2="485" y2="440" stroke="#4caf50" stroke-width="2"/>
+      <line x1="470" y1="445" x2="460" y2="460" stroke="#4caf50" stroke-width="2"/>
+      
+      <text x="470" y="475" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#d84315">Cosine Similarity</text>
+    </g>
+    
+    <!-- Performance Charts -->
+    <rect x="560" y="405" width="180" height="80" fill="#ffffff" stroke="#ff5722" stroke-width="1" rx="6"/>
+    <text x="650" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#ff5722">Performance Comparison</text>
+    
+    <!-- Bar chart -->
+    <rect x="570" y="450" width="15" height="25" fill="#f44336"/>
+    <text x="577" y="480" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#666">Basic</text>
+    
+    <rect x="590" y="440" width="15" height="35" fill="#ff9800"/>
+    <text x="597" y="480" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#666">Filter</text>
+    
+    <rect x="610" y="430" width="15" height="45" fill="#4caf50"/>
+    <text x="617" y="480" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#666">Index</text>
+    
+    <rect x="630" y="425" width="15" height="50" fill="#2196f3"/>
+    <text x="637" y="480" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#666">Cache</text>
+    
+    <text x="650" y="435" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#d84315">Query Speed (ms)</text>
+    <text x="570" y="425" font-family="Arial, sans-serif" font-size="7" fill="#666">500</text>
+    <text x="570" y="445" font-family="Arial, sans-serif" font-size="7" fill="#666">200</text>
+    <text x="570" y="465" font-family="Arial, sans-serif" font-size="7" fill="#666">50</text>
+    
+    <!-- Optimization Strategies -->
+    <rect x="40" y="500" width="700" height="60" fill="#fafafa" stroke="#ff5722" stroke-width="1" rx="4"/>
+    <text x="50" y="515" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#d84315">Optimization Techniques:</text>
+    
+    <text x="50" y="530" font-family="Arial, sans-serif" font-size="10" fill="#d84315">• <tspan font-weight="bold">Index Optimization:</tspan> HNSW algorithm for fast ANN search</text>
+    <text x="400" y="530" font-family="Arial, sans-serif" font-size="10" fill="#d84315">• <tspan font-weight="bold">Caching:</tspan> Query result caching with TTL</text>
+    
+    <text x="50" y="545" font-family="Arial, sans-serif" font-size="10" fill="#d84315">• <tspan font-weight="bold">Metadata Indexing:</tspan> B-tree indexes on frequently queried fields</text>
+    <text x="400" y="545" font-family="Arial, sans-serif" font-size="10" fill="#d84315">• <tspan font-weight="bold">Batch Queries:</tspan> Process multiple queries together</text>
+    
+    <text x="50" y="560" font-family="Arial, sans-serif" font-size="10" fill="#d84315">• <tspan font-weight="bold">Distance Metrics:</tspan> Choose optimal metric (cosine/euclidean/L2)</text>
+    <text x="400" y="560" font-family="Arial, sans-serif" font-size="10" fill="#d84315">• <tspan font-weight="bold">Memory Mapping:</tspan> Efficient vector storage</text>
+  </g>
+  
+  <!-- Performance Indicators -->
+  <rect x="600" y="580" width="180" height="15" fill="#4caf50" rx="7"/>
+  <text x="690" y="590" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white">10x Faster | Scalable to 1M+ docs</text>
+</svg>
